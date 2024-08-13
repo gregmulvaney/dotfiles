@@ -1,22 +1,24 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = { ":TSUpdate" },
+    -- event = { "BufReadPost", "BufNewFile" },
     config = function()
         require("nvim-treesitter.configs").setup({
+            sync_install = false,
+            auto_install = true,
             ensure_installed = {
                 "vim",
                 "vimdoc",
-                "go",
-                "rust"
-            },
-            sync_install = false,
-            auto_install = true,
-            indent = {
-                enable = true
+                "zig",
+                "rust",
+                "go"
             },
             highlight = {
                 enable = true
             },
+            indent = {
+                enable = true
+            }
         })
     end
 }
