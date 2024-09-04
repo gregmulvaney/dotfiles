@@ -32,6 +32,12 @@ return {
                         capabilities = capabilities
                     }
                 end,
+                require("lspconfig").html.setup {
+                    filetypes = { "html", "templ" }
+                },
+                require("lspconfig").emmet_language_server.setup {
+                    filetypes = { "html", "templ" }
+                },
                 zls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({

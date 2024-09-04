@@ -9,7 +9,8 @@ HISTFILE="$XDG_CACHE_DIR/zsh/history"
 HISTSIZE=5000
 SAVEHIST=5000
 ZSH_COMPDUMP="$XDG_CACHE_DIR/zsh/compdump"
-autoload -Uz compinit 
+autoload -Uz compinit
+zstyle ':completion:*' menu select
 compinit
 # bindkey -v
 
@@ -40,9 +41,11 @@ alias zvim="nvim $HOME/.zshrc"
 alias zsrc="source $HOME/.zshrc"
 alias cd="z"
 alias vim="nvim"
+alias ..="cd .."
 
 ### Zoxide ###
 eval "$(zoxide init zsh)"
+source <(fzf --zsh)
 
 # TODO: Find lazy load alternatives to improve shell startup times 
 
@@ -56,3 +59,5 @@ eval "$(zoxide init zsh)"
 
 
 
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
