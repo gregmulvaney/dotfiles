@@ -50,7 +50,7 @@ source <(fzf --zsh)
 # TODO: Find lazy load alternatives to improve shell startup times 
 
 ### Direnv ###
-#eval "$(direnv hook zsh)"
+eval "$(direnv hook zsh)"
 
 ### NVM ###
 #export NVM_DIR="$XDG_LOCAL_DIR/nvm"
@@ -61,3 +61,6 @@ source <(fzf --zsh)
 
 export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
+
+# bun completions
+[ -s "/Users/gregmulvaney/.local/bun/_bun" ] && source "/Users/gregmulvaney/.local/bun/_bun"
