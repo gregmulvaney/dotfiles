@@ -1,7 +1,8 @@
-vim.keymap.set("n", "<leader>dv", vim.cmd.Ex)
+local map = vim.keymap.set
 
--- Format
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+-- Open NetRw
+map("n", "<leader>dv", vim.cmd.Ex)
+map("n", "<leader>f", vim.lsp.buf.format)
+map("n", "<C-s>", vim.cmd.write)
 
-vim.keymap.set("i", "jj", "<Esc>")
-
+map("i", "jj", "<ESC>")
