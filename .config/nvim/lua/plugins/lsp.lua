@@ -22,6 +22,21 @@ return {
         emmet_ls = {
           filetypes = { "html", "templ" },
         },
+        eslint = {
+          filetypes = { "javascript", "typescript" },
+          settings = {
+            eslint = {
+              enable = true,
+              format = { enable = true },
+              autoFixOnSave = true,
+              codeActionOnSave = {
+                mode = "all",
+                rules = { "!debugger", "!no-only-tests/*" },
+              },
+              lintTask = { enable = true },
+            },
+          },
+        },
         html = {
           init_options = {
             configurationSection = { "html", "css", "javascript" },
