@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/gregmulvaney/.zsh/completions:"* ]]; then export FPATH="/Users/gregmulvaney/.zsh/completions:$FPATH"; fi
 ### XDG style config for macOS ###
 export XDG_CONFIG_DIR="$HOME/.config"
 export XDG_CACHE_DIR="$HOME/.cache"
@@ -55,3 +57,4 @@ eval "$(direnv hook zsh)"
 [ -s "/Users/gregmulvaney/.local/bun/_bun" ] && source "/Users/gregmulvaney/.local/bun/_bun"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+. "/Users/gregmulvaney/.deno/env"

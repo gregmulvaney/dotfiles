@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 
 -- Open NetRw
-map("n", "<leader>dv", vim.cmd.Ex)
+map("n", "<leader>dv", vim.cmd.Oil)
 -- Save
 map("n", "<C-s>", vim.cmd.write)
 
