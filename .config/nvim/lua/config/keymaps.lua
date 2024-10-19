@@ -4,5 +4,6 @@ local map = vim.keymap.set
 map("n", "<leader>dv", vim.cmd.Oil)
 -- Save
 map("n", "<C-s>", vim.cmd.write)
+map("n","<leader>f", vim.lsp.buf.format)
 
 map("i", "jj", "<ESC>")
