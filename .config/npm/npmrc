@@ -1,0 +1,4 @@
+prefix=${XDG_LOCAL_DIR}/npm
+cache=${XDG_CACHE_DIR}/npm
+init-module=${XDG_CONFIG_DIR}/npm/config/npm-init.js
+logs-dir=${XDG_LOCAL_DIR}/state/npm/logs
