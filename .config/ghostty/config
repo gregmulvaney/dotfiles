@@ -1,4 +1,4 @@
-font-family = CommitMono
+font-family = MonoLisa Static
 font-family-bold = MonoLisa Static
 font-family-italic = MonoLisa Static
 font-family-bold-italic = MonoLisa Static
@@ -10,7 +10,7 @@ font-style-bold-italic = default
 
 font-feature = calt,liga,dliga
 
-font-size = 14.0
+font-size = 12.5
 
 theme = catppuccin-mocha
 
