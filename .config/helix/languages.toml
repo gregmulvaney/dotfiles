@@ -1,6 +1,6 @@
 [[language]]
 name = "go"
-language-servers = ["gopls"]
+language-servers = ["gopls","helix-snippets-ls"]
 auto-format = true
 
 scope = "source.go"

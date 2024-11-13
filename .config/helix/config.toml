@@ -7,12 +7,17 @@ mouse = true
 cursorline = true
 true-color = true
 color-modes = true
+completion-timeout = 150
 
 [editor.statusline]
 separator = ">"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+skip-levels = 1
 
 [editor.cursor-shape]
 insert = "bar"
@@ -21,13 +26,12 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
-
-[editor.indent-guides]
-render = true 
+ignore = true
 
 [editor.lsp]
 display-messages = true
 snippets = true
+display-inlay-hints = true
 
 [keys.normal]
 C-s = ":w"

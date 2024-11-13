@@ -22,6 +22,9 @@ export RUSTUP_HOME="$XDG_LOCAL_DIR/rustup"
 export CARGO_HOME="$XDG_LOCAL_DIR/cargo"
 export PATH="$CARGO_HOME/bin:$PATH"
 
+### Zig ###
+export PATH="$XDG_LOCAL_DIR/zig:$PATH"
+
 ### NPM ###
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_DIR/npm/npmrc"
 
