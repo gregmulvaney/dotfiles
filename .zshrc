@@ -13,13 +13,18 @@ SAVEHIST=1000
 
 ### VCS Info ###
 autoload -Uz vcs_info 
-precmd() { vcs_info }
+precmd() {
+  vcs_info
+}
 setopt prompt_subst
 zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' formats '%F{green}on  %b%m%u%c %f'
+zstyle ':vcs_info:*' unstagedstr '%F{red}●%f'
+zstyle ':vcs_info:*' stagedstr '%F{222}●%f'  
+zstyle ':vcs_info:*' check-for-changes true 
+zstyle ':vcs_info:git:*' formats '%m%u%c %F{green} %b%f'
 
 ### Prompt ###
-PROMPT='%F{blue}%~%f ${vcs_info_msg_0_}%F{yellow}>%f '
+PROMPT='%F{blue}%~%f ${vcs_info_msg_0_} %F{yellow}>%f '
 
 #################
 ### Languages ###
