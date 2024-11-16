@@ -41,10 +41,11 @@ export PATH="$CARGO_HOME/bin:$PATH"
 
 ### Zig ###
 export PATH="$XDG_LOCAL_HOME/zig:$PATH"
+export PATH="$XDG_LOCAL_HOME/zls:$PATH"
 
 ### NPM ###
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
-export PATH="$XDG_LOCAL_HOME/npm/bin":$PATH
+export PATH="$XDG_LOCAL_HOME/npm/bin:$PATH"
 
 ###############
 ### Aliases ###
@@ -53,6 +54,7 @@ export PATH="$XDG_LOCAL_HOME/npm/bin":$PATH
 alias cd='z'
 alias zvim="nvim $HOME/.zshrc"
 alias zsrc="source $HOME/.zshrc"
+alias ls='eza'
 
 # Load zoxide
 eval "$(zoxide init zsh)"
@@ -63,3 +65,10 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 # Load direnv
 eval "$(direnv hook zsh)"
 
+
+# bun completions
+[ -s "/Users/greg/.bun/_bun" ] && source "/Users/greg/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -1,17 +1,30 @@
+### JSON ###
+[language-server.vscode-json-language-server]
+command = "vscode-json-languageserver"
+args = ["--stdio"]
+
+[language-server.vscode-json-language-server.config]
+provideFormatter = true
+
+### ESlint
+[language-server.eslint]
+name = "eslint"
+command = "vscode-eslint-language-server"
+args =["--stdio"]
+
+[language-server.eslint.config]
+validate = "on"
+codeActionsOnSave = { mode="all", "source.fixAll.eslint" = true}
+
 [[language]]
 name = "go"
 language-servers = ["gopls","helix-snippets-ls"]
 auto-format = true
-
 scope = "source.go"
 injection-regex = "go"
 file-types = ["go"]
 roots = ["go.mod",".git"]
 comment-token="//"
-
-[language-server.vscode-json-language-server]
-command = "vscode-json-languageserver"
-args = ["--stdio"]
 
 [[language]]
 name = "json"
@@ -20,6 +33,15 @@ auto-format = true
 scope = "source.json"
 file-types = ["json"]
 
+[[language]]
+name = "typescript"
+language-servers = [ "typescript-language-server", "eslint"]
+#formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
+formatter = { command = "dprint", args = [ "fmt", "--stdin", "typescript" ] }
+auto-format = true
 
-
-
+[[language]]
+name = "tsx"
+language-servers = ["typescript-language-server", "eslint"]
+formatter = { command = "dprint", args = [ "fmt", "--stdin", "tsx" ] }
+auto-format = true
