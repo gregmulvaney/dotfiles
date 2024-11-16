@@ -9,4 +9,17 @@ file-types = ["go"]
 roots = ["go.mod",".git"]
 comment-token="//"
 
+[language-server.vscode-json-language-server]
+command = "vscode-json-languageserver"
+args = ["--stdio"]
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]
+auto-format = true
+scope = "source.json"
+file-types = ["json"]
+
+
+
 
