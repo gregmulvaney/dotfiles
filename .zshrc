@@ -42,6 +42,7 @@ export PATH="$CARGO_HOME/bin:$PATH"
 ### Zig ###
 export PATH="$XDG_LOCAL_HOME/zig:$PATH"
 export PATH="$XDG_LOCAL_HOME/zls:$PATH"
+export PATH="/usr/local/opt/llvm/bin:$PATH"
 
 ### NPM ###
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
@@ -73,3 +74,4 @@ eval "$(direnv hook zsh)"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export GPG_TTY=$(tty)
+export PATH="/usr/local/opt/postgresql@17/bin:$PATH"

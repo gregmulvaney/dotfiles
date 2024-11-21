@@ -32,20 +32,23 @@ language-servers = ["vscode-json-language-server"]
 auto-format = true
 scope = "source.json"
 file-types = ["json"]
+formatter = { command = "bunx", args = ["prettier", "--parser", "typescript"] }
 
 [[language]]
 name = "typescript"
 language-servers = ["typescript-language-server", "eslint"]
-#formatter = { command = "prettier", args = [ "--parser", "typescript" ] }
 auto-format = true
+formatter = { command = "bunx", args = ["prettier", "--parser", "typescript"] }
 
 [[language]]
 name = "tsx"
 scope = "source.tsx"
 file-types = ["tsx"]
 roots = ["package.json"]
-language-servers = ["typescript-language-server", "eslint"]
+language-servers = [{name = "typescript-language-server", except-features =["inlay-hints"]}, "eslint"]
 auto-format = true
+formatter = { command = "bunx", args = ["prettier", "--parser", "typescript"] }
+
 
 [[language]]
 name = "toml"

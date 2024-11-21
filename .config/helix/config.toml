@@ -5,12 +5,14 @@ theme = "catppuccin_mocha"
 #line-number = "relative"
 mouse = true
 cursorline = true
-true-color = true
 color-modes = true
+true-color = true
 completion-timeout = 150
 
 [editor.statusline]
-separator = ">"
+left = ["mode","separator","version-control","separator", "file-name","file-modification-indicator"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
 mode.select = "SELECT"
@@ -29,12 +31,16 @@ hidden = false
 ignore = true
 
 [editor.lsp]
+auto-signature-help = false
 display-messages = true
 snippets = true
-display-inlay-hints = true
+display-inlay-hints = false
 
 [keys.normal]
 C-s = ":w"
+
+[keys.normal.space]
+i = ":toggle lsp.display-inlay-hints"
 
 [keys.insert]
 j = { j = "normal_mode" }
