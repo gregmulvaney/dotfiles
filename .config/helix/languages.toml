@@ -54,3 +54,11 @@ formatter = { command = "bunx", args = ["prettier", "--parser", "typescript"] }
 name = "toml"
 scope = "source.toml"
 auto-format = true
+
+[[language]]
+name = "ocaml"
+scope = "source.ocaml"
+file-types = ["re"]
+language-servers = ["ocamllsp"]
+auto-format = true
+comment-token = ["/*", "*", "*/"]

@@ -48,6 +48,10 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export PATH="$XDG_LOCAL_HOME/npm/bin:$PATH"
 
+### OCAML ###
+export OPAMROOT="$XDG_DATA_HOME/opam"
+
+
 ###############
 ### Aliases ###
 ###############
@@ -75,3 +79,14 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export GPG_TTY=$(tty)
 export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
+
+
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/greg/.local/share/opam/opam-init/init.zsh' ]] || source '/Users/greg/.local/share/opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
