@@ -1,64 +1,48 @@
-### JSON ###
-[language-server.vscode-json-language-server]
-command = "vscode-json-languageserver"
-args = ["--stdio"]
+# [[language]]
+# name = "name"
+# scope = "scope.lang"
+# injection-regex = "mylang"
+# file-types = ["mylang", "myl"]
+# shebangs = ["sh", "bash"]
+# root = ["roots.json"]
+# auto-format = true
+# comment-token = "#"
+# block-comment-tokens = { start = "/*", end = "*/" }
+# indent = { tab-width = 2, unit = "  " }
+# formatter = { command = "mylang-formatter", args = ["--stdin"] }
+# language-servers = ["mylang-lsp"]
+# grammar = "mylang"
 
-[language-server.vscode-json-language-server.config]
-provideFormatter = true
-
-### ESlint
-[language-server.eslint]
-name = "eslint"
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
-
-[language-server.eslint.config]
-validate = "on"
-codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
-
+## Go --------------------------------------------------------------------------------
 [[language]]
 name = "go"
-language-servers = ["gopls", "helix-snippets-ls"]
-auto-format = true
-scope = "source.go"
+scope = "scope.go"
 injection-regex = "go"
 file-types = ["go"]
-roots = ["go.mod", ".git"]
+roots = ["go.mod", "go.sum"]
+auto-format = true
 comment-token = "//"
+formatter = { command = "gofumpt", args = ["-l", "-w", "."] }
+language-servers = ["gopls"]
 
-[[language]]
-name = "json"
-language-servers = ["vscode-json-language-server"]
-auto-format = true
-scope = "source.json"
-file-types = ["json"]
-formatter = { command = "bunx", args = ["prettier", "--parser", "typescript"] }
-
-[[language]]
-name = "typescript"
-language-servers = ["typescript-language-server", "eslint"]
-auto-format = true
-formatter = { command = "bunx", args = ["prettier", "--parser", "typescript"] }
-
-[[language]]
-name = "tsx"
-scope = "source.tsx"
-file-types = ["tsx"]
-roots = ["package.json"]
-language-servers = [{name = "typescript-language-server", except-features =["inlay-hints"]}, "eslint"]
-auto-format = true
-formatter = { command = "bunx", args = ["prettier", "--parser", "typescript"] }
-
-
-[[language]]
-name = "toml"
-scope = "source.toml"
-auto-format = true
-
+## Ocaml ----------------------------------------------------------------------------
 [[language]]
 name = "ocaml"
-scope = "source.ocaml"
-file-types = ["re"]
-language-servers = ["ocamllsp"]
+scope = "scope.ocaml"
+injection-regex = "ocaml"
+file-types = ["ml", "re"]
 auto-format = true
-comment-token = ["/*", "*", "*/"]
+block-comment-tokens = { start = "(*", end = "*)" }
+formatter = { command = "refmt" }
+language-servers = ["ocamllsp"]
+
+## TOML ----------------------------------------------------------------------------
+[[language]]
+name = "toml"
+scope = "scope.toml"
+injection-regex = "toml"
+file-types = ["toml"]
+auto-format = true
+comment-token = "#"
+formatter = { command = "taplo", args = ["fmt", "-"] }
+language-servers = ["taplo"]

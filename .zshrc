@@ -51,6 +51,16 @@ export PATH="$XDG_LOCAL_HOME/npm/bin:$PATH"
 ### OCAML ###
 export OPAMROOT="$XDG_DATA_HOME/opam"
 
+### Bun ###
+export BUN_INSTALL="$XDG_DATA_HOME/bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export GPG_TTY=$(tty)
+export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
+
+### Helix ###
+export PATH="$XDG_LOCAL_HOME/hx:$PATH"
+export HELIX_RUNTIME="$XDG_CONFIG_HOME/helix/runtime"
 
 ###############
 ### Aliases ###
@@ -71,17 +81,8 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(direnv hook zsh)"
 
 
-# bun completions
+# bun copletions
 [ -s "/Users/greg/.bun/_bun" ] && source "/Users/greg/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export GPG_TTY=$(tty)
-export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
-
-
-
 
 # BEGIN opam configuration
 # This is useful if you're using opam as it adds:
@@ -90,3 +91,6 @@ export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/greg/.local/share/opam/opam-init/init.zsh' ]] || source '/Users/greg/.local/share/opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+# bun completions
+[ -s "/Users/greg/.local/share/bun/_bun" ] && source "/Users/greg/.local/share/bun/_bun"
