@@ -10,8 +10,22 @@ true-color = true
 completion-timeout = 150
 
 [editor.statusline]
-left = ["mode","separator","version-control","separator", "file-name","file-modification-indicator"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+left = [
+  "mode",
+  "separator",
+  "version-control",
+  "separator",
+  "file-name",
+  "file-modification-indicator",
+]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -31,7 +45,6 @@ hidden = false
 ignore = true
 
 [editor.lsp]
-auto-signature-help = false
 display-messages = true
 snippets = true
 display-inlay-hints = false

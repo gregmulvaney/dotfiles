@@ -1,40 +1,17 @@
-# [[language]]
-# name = "name"
-# scope = "scope.lang"
-# injection-regex = "mylang"
-# file-types = ["mylang", "myl"]
-# shebangs = ["sh", "bash"]
-# root = ["roots.json"]
-# auto-format = true
-# comment-token = "#"
-# block-comment-tokens = { start = "/*", end = "*/" }
-# indent = { tab-width = 2, unit = "  " }
-# formatter = { command = "mylang-formatter", args = ["--stdin"] }
-# language-servers = ["mylang-lsp"]
-# grammar = "mylang"
+## GO ------------------------------------------------------------------------------
+[language-server.gopls]
+config = { gofumpt = true, experimentalPostfixCompletions = true, usePlaceholders = true }
 
-## Go --------------------------------------------------------------------------------
 [[language]]
 name = "go"
-scope = "scope.go"
+scope = "source.go"
 injection-regex = "go"
 file-types = ["go"]
 roots = ["go.mod", "go.sum"]
 auto-format = true
 comment-token = "//"
-formatter = { command = "gofumpt", args = ["-l", "-w", "."] }
+formatter = ["gofumpt"]
 language-servers = ["gopls"]
-
-## Ocaml ----------------------------------------------------------------------------
-[[language]]
-name = "ocaml"
-scope = "scope.ocaml"
-injection-regex = "ocaml"
-file-types = ["ml", "re"]
-auto-format = true
-block-comment-tokens = { start = "(*", end = "*)" }
-formatter = { command = "refmt" }
-language-servers = ["ocamllsp"]
 
 ## TOML ----------------------------------------------------------------------------
 [[language]]

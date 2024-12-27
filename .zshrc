@@ -4,7 +4,7 @@
 
 ### Settings ###
 bindkey -v
-autoload -Uz compinit && compinit
+#autoload -Uz compinit && compinit
 
 ### History ###
 HISTFILE="$XDG_CACHE_HOME/zsh/history"
@@ -58,9 +58,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export GPG_TTY=$(tty)
 export PATH="/usr/local/opt/postgresql@17/bin:$PATH"
 
-### Helix ###
-export PATH="$XDG_LOCAL_HOME/hx:$PATH"
-export HELIX_RUNTIME="$XDG_CONFIG_HOME/helix/runtime"
+export HELIX_RUNTIME=~/Projects/rust/helix/runtime
+
 
 ###############
 ### Aliases ###
@@ -73,24 +72,10 @@ alias ls='eza'
 
 # Load zoxide
 eval "$(zoxide init zsh)"
-# Load fzf
-source <(fzf --zsh)
-# Load fnm
-eval "$(fnm env --use-on-cd --shell zsh)"
-# Load direnv
+ # Load fzf
+# source <(fzf --zsh)
+# # Load fnm
+# eval "$(fnm env --use-on-cd --shell zsh)"
+# # Load direnv
 eval "$(direnv hook zsh)"
 
-
-# bun copletions
-[ -s "/Users/greg/.bun/_bun" ] && source "/Users/greg/.bun/_bun"
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-[[ ! -r '/Users/greg/.local/share/opam/opam-init/init.zsh' ]] || source '/Users/greg/.local/share/opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-# END opam configuration
-
-# bun completions
-[ -s "/Users/greg/.local/share/bun/_bun" ] && source "/Users/greg/.local/share/bun/_bun"
