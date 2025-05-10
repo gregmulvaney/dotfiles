@@ -1,0 +1,8 @@
+[user]
+        name = Gregory Mulvaney
+        email = gregtmulvaney@gmail.com
+	signingkey = /Users/greg/.ssh/id_ed25519.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true

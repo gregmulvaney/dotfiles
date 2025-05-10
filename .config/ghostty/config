@@ -1,0 +1,4 @@
+font-feature = calt,liga,dliga
+theme = catppuccin-mocha
+cursor-style = bar
+keybind = global:super+.=toggle_quick_terminal
