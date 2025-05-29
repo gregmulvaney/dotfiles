@@ -1,0 +1,7 @@
+font-feature = calt,liga,dliga
+font-size = 13
+font-family = MonoLisa
+font-style-italic = Regular Italic
+theme = catppuccin-mocha
+cursor-style = bar
+keybind = global:super+.=toggle_quick_terminal
