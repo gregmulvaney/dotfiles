@@ -1,10 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
     lazy = false,
-    dependencies = {
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
-    },
     opts = {
         codelens = {
             enabled = true,
@@ -14,6 +10,7 @@ return {
             lua_ls = {},
             nil_ls = {
                 cmd = { "nil" },
+                formatter = {"alejandra"}
             },
             ts_ls = {
                 cmd = { "bunx", "typescript-language-server", "--stdio" },
@@ -30,8 +27,5 @@ return {
             config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
             lspconfig[server].setup(config)
         end
-
-        require("mason").setup()
-        require("mason-lspconfig").setup()
     end
 }
