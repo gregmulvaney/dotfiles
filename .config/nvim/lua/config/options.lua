@@ -3,6 +3,7 @@ vim.g.localmapleader = "\\"
 
 -- Line numbers
 vim.opt.nu = true
+vim.opt.relativenumber = true
 vim.opt.smartindent = true
 
 vim.opt.tabstop = 4
@@ -11,7 +12,11 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 -- Hide cmd line
--- vim.opt.cmdheight = 0
+vim.opt.cmdheight = 0
+
+vim.o.sidescrolloff = 8
+vim.o.sidescroll = 1
+vim.opt.backspace = { "start", "eol", "indent" }
 
 -- Disable line wrapping
 vim.opt.wrap = false
@@ -37,4 +42,3 @@ vim.opt.updatetime = 50
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
-
