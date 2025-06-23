@@ -1,21 +1,21 @@
 return {
-    "stevearc/conform.nvim",
-    opts = {
-        formatters_by_ft = {
-            go = { "gofumpt", "goimports" },
-            lua = { "stylua" },
-            nix = { "alejandra" }
-        },
-        format_on_save = {
-            timeout_ms = 500,
-            lsp_format = "fallback",
-        },
-    },
-    config = function(_, opts)
-        local conform = require("conform")
-
-        vim.keymap.set("n", "<leader>f", conform.format)
-
-        conform.setup(opts)
-    end
+	--    "stevearc/conform.nvim",
+	--    opts = {
+	--        formatters_by_ft = {
+	--            go = { "gofumpt", "goimports" },
+	--            lua = { "stylua" },
+	--            nix = { "alejandra" }
+	--        },
+	--        format_on_save = {
+	--            timeout_ms = 500,
+	--            lsp_format = "fallback",
+	--        },
+	--    },
+	--    config = function(_, opts)
+	--        local conform = require("conform")
+	--
+	--        vim.keymap.set("n", "<leader>f", conform.format)
+	--
+	--        conform.setup(opts)
+	--    end
 }

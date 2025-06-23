@@ -26,6 +26,9 @@ return {
         map("n", "<leader>l", function()
             harpoon:list():select(4)
         end)
+        map("n", "<leader><S-h>", function()
+            harpoon:list():select(5)
+        end)
 
         map("n", "<leader><C-h>", function()
             harpoon:list():replace_at(1)
