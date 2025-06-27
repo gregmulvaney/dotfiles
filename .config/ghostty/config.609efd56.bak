@@ -5,4 +5,3 @@ font-style-italic = Regular Italic
 theme = catppuccin-mocha
 cursor-style = bar
 keybind = global:super+.=toggle_quick_terminal
-keybind = shift+enter=text:\n
